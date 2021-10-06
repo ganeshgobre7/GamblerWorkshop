@@ -8,6 +8,7 @@ namespace Gambler
         {
             Console.WriteLine("Wlcome to the Gambler Program");
             Gambler gambler = new Gambler();
+            gambler.Betting();
         }
     }
 }
