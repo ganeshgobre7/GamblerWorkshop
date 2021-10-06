@@ -16,15 +16,29 @@ namespace Gambler
             int check = random.Next(0, 2);
             if(check==0)
             {
-                betCount = stake + 1;
+                betCount = stake + bet;
                 Console.WriteLine("Player Won the Game");
+                Calculate(stake, true);
             }
             else
             {
-                betCount = stake - 1;
+                betCount = stake - bet;
                 Console.WriteLine("Player Loose the Game");
+                Calculate(stake, false);
             }
-
+        }
+        public void Calculate(int stake ,Boolean winlose)
+        {
+            if (winlose)
+            {
+                stake = stake + stake * 50 / 100;
+                Console.WriteLine("Player Won the Game : Your stake is :" + stake);
+            }
+            else
+            {
+                stake = stake - stake * 50 / 100;
+                Console.WriteLine("Player lose the Game : Your stake is :"+stake);
+            }
         }
     }
 }
